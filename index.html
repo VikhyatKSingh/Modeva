@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body>
+    <nav
+        class="sticky top-0 z-50 flex flex-col bg-white/40 backdrop-blur-md w-full px-4 py-3.5 items-center justify-between">
+        <div class="flex items-center justify-between w-full">
+            <div>
+                <span class="font-bold text-purple-500 text-2xl ml-2">Modeva</span>
+
+            </div>
+
+            <div class="hidden gap-8 -ml-8 font-semibold lg:flex ">
+                <span>Home </span>
+                <span>Shop</span>
+                <span>Categories</span>
+                <span>About</span>
+            </div>
+
+            <div
+                class="md:flex rounded-3xl relative md:w-[400px] lg:w-[400px] lg:bg-white items-center px-2 pr-3 hidden md:block border-2 border-slate-200">
+                <input class="focus:outline-none w-full h-10  rounded-2xl text-black p-2 " placeholder="Search...">
+                <svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15.8432 17.3679C14.4988 18.392 12.8204 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19 12.8768 18.3537 14.6027 17.2715 15.9672L21.6982 20.2841C22.0936 20.6697 22.1015 21.3028 21.7159 21.6982C21.3303 22.0936 20.6972 22.1015 20.3018 21.7159L15.8432 17.3679ZM17 11C17 7.68629 14.3137 5 11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11Z"
+                        fill="#212121" />
+                </svg>
+            </div>
+            <div class="flex md:gap-5 items-center">
+                <!-- <div class="block md:hidden ">
+                <svg  width="24" height="24" viewBox="0 0 24 24" fill="none"
+
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16.1017 17.1624C14.717 18.3101 12.9391 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19 12.9391 18.3101 14.717 17.1624 16.1018L21.7803 20.7197C22.0732 21.0126 22.0732 21.4874 21.7803 21.7803C21.4874 22.0732 21.0125 22.0732 20.7196 21.7803L16.1017 17.1624ZM17.5 11C17.5 7.41015 14.5899 4.5 11 4.5C7.41015 4.5 4.5 7.41015 4.5 11C4.5 14.5899 7.41015 17.5 11 17.5C14.5899 17.5 17.5 14.5899 17.5 11Z"
+                    fill="#212121" />
+            </svg> -->
+                <!-- </div> -->
+
+                <div class="hidden md:block flex gap-0.5 items-center">
+                    <svg width="24" class="hidden md:block lg:hidden" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912ZM19.3684 12.1206L12.0002 19.4842L4.63521 12.1191C3.12192 10.6058 3.12192 8.15232 4.63521 6.63904C6.14849 5.12575 8.602 5.12575 10.1153 6.63904L11.4727 7.99648C11.7706 8.29435 12.2553 8.28854 12.5459 7.98363L13.8806 6.63978C15.3977 5.12268 17.8528 5.12268 19.3699 6.63978C20.8836 8.15343 20.881 10.5997 19.3684 12.1206Z"
+                            fill="#212121" />
+                    </svg>
+                    <span class="font-semibold hidden lg:block">WishList</span>
+                </div>
+                <div class=" hidden md:block flex gap-0.5  items-center">
+                    <svg width="24" class="hidden md:block lg:hidden" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M2.5 4.25C2.5 3.83579 2.83579 3.5 3.25 3.5H3.80826C4.75873 3.5 5.32782 4.13899 5.65325 4.73299C5.87016 5.12894 6.02708 5.58818 6.14982 6.00395C6.18306 6.00134 6.21674 6 6.2508 6H18.7481C19.5783 6 20.1778 6.79442 19.9502 7.5928L18.1224 14.0019C17.7856 15.1832 16.7062 15.9978 15.4779 15.9978H9.52977C8.29128 15.9978 7.2056 15.1699 6.87783 13.9756L6.11734 11.2045L4.85874 6.95578L4.8567 6.94834C4.701 6.38051 4.55487 5.85005 4.33773 5.4537C4.12686 5.0688 3.95877 5 3.80826 5H3.25C2.83579 5 2.5 4.66421 2.5 4.25ZM7.57283 10.8403L8.32434 13.5786C8.47333 14.1215 8.96682 14.4978 9.52977 14.4978H15.4779C16.0362 14.4978 16.5268 14.1275 16.68 13.5906L18.4168 7.5H6.58549L7.55906 10.7868C7.56434 10.8046 7.56892 10.8224 7.57283 10.8403ZM11 19C11 20.1046 10.1046 21 9 21C7.89543 21 7 20.1046 7 19C7 17.8954 7.89543 17 9 17C10.1046 17 11 17.8954 11 19ZM9.5 19C9.5 18.7239 9.27614 18.5 9 18.5C8.72386 18.5 8.5 18.7239 8.5 19C8.5 19.2761 8.72386 19.5 9 19.5C9.27614 19.5 9.5 19.2761 9.5 19ZM18 19C18 20.1046 17.1046 21 16 21C14.8954 21 14 20.1046 14 19C14 17.8954 14.8954 17 16 17C17.1046 17 18 17.8954 18 19ZM16.5 19C16.5 18.7239 16.2761 18.5 16 18.5C15.7239 18.5 15.5 18.7239 15.5 19C15.5 19.2761 15.7239 19.5 16 19.5C16.2761 19.5 16.5 19.2761 16.5 19Z"
+                            fill="#212121" />
+                    </svg>
+                    <span class="hidden lg:block font-semibold">Cartlist</span>
+
+
+
+                </div>
+
+                <div class="hidden md:block">
+                    <svg width="24" height="24" class="ml-3" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 7.75C11.0335 7.75 10.25 6.9665 10.25 6C10.25 5.0335 11.0335 4.25 12 4.25C12.9665 4.25 13.75 5.0335 13.75 6C13.75 6.9665 12.9665 7.75 12 7.75ZM12 13.75C11.0335 13.75 10.25 12.9665 10.25 12C10.25 11.0335 11.0335 10.25 12 10.25C12.9665 10.25 13.75 11.0335 13.75 12C13.75 12.9665 12.9665 13.75 12 13.75ZM10.25 18C10.25 18.9665 11.0335 19.75 12 19.75C12.9665 19.75 13.75 18.9665 13.75 18C13.75 17.0335 12.9665 16.25 12 16.25C11.0335 16.25 10.25 17.0335 10.25 18Z"
+                            fill="#212121" />
+                    </svg>
+
+
+                </div>
+
+                <div id="menuBtn" class="block md:hidden">
+                    <svg width="24" id="cancel" class="hidden" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4.2097 4.3871L4.29289 4.29289C4.65338 3.93241 5.22061 3.90468 5.6129 4.2097L5.70711 4.29289L12 10.585L18.2929 4.29289C18.6834 3.90237 19.3166 3.90237 19.7071 4.29289C20.0976 4.68342 20.0976 5.31658 19.7071 5.70711L13.415 12L19.7071 18.2929C20.0676 18.6534 20.0953 19.2206 19.7903 19.6129L19.7071 19.7071C19.3466 20.0676 18.7794 20.0953 18.3871 19.7903L18.2929 19.7071L12 13.415L5.70711 19.7071C5.31658 20.0976 4.68342 20.0976 4.29289 19.7071C3.90237 19.3166 3.90237 18.6834 4.29289 18.2929L10.585 12L4.29289 5.70711C3.93241 5.34662 3.90468 4.77939 4.2097 4.3871L4.29289 4.29289L4.2097 4.3871Z"
+                            fill="#212121" />
+                    </svg>
+
+                    <svg width="24" id="menu" class="block" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3 17H21C21.5523 17 22 17.4477 22 18C22 18.5128 21.614 18.9355 21.1166 18.9933L21 19H3C2.44772 19 2 18.5523 2 18C2 17.4872 2.38604 17.0645 2.88338 17.0067L3 17H21H3ZM2.99988 11L20.9999 10.9978C21.5522 10.9978 22 11.4454 22 11.9977C22 12.5105 21.6141 12.9333 21.1167 12.9911L21.0001 12.9978L3.00012 13C2.44784 13.0001 2 12.5524 2 12.0001C2 11.4873 2.38594 11.0646 2.88326 11.0067L2.99988 11L20.9999 10.9978L2.99988 11ZM3 5H21C21.5523 5 22 5.44772 22 6C22 6.51284 21.614 6.93551 21.1166 6.99327L21 7H3C2.44772 7 2 6.55228 2 6C2 5.48716 2.38604 5.06449 2.88338 5.00673L3 5H21H3Z"
+                            fill="#212121" />
+                    </svg>
+                </div>
+
+
+
+            </div>
+        </div>
+        <!-- search bar -->
+        <div id="search_bar"
+            class="w-full flex block md:hidden mt-2 rounded-3xl relative  lg:w-2/6 bg-white items-center px-2 pr-3 border-2 border-slate-200">
+            <input class="focus:outline-none w-full h-10 bg-white  rounded-2xl text-black p-2 " placeholder="Search...">
+            <svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M15.8432 17.3679C14.4988 18.392 12.8204 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19 12.8768 18.3537 14.6027 17.2715 15.9672L21.6982 20.2841C22.0936 20.6697 22.1015 21.3028 21.7159 21.6982C21.3303 22.0936 20.6972 22.1015 20.3018 21.7159L15.8432 17.3679ZM17 11C17 7.68629 14.3137 5 11 5C7.68629 5 5 7.68629 5 11C5 14.3137 7.68629 17 11 17C14.3137 17 17 14.3137 17 11Z"
+                    fill="#212121" />
+            </svg>
+        </div>
+
+        <div id="menuList" class=" mt-3 hidden lg:hidden gap-8 -ml-8 font-semibold flex flex-col">
+
+            <span>Home </span>
+            <span>Shop</span>
+            <span>Categories</span>
+            <span>About</span>
+        </div>
+
+
+    </nav>
+    <div
+        class="flex justify-equal bg-gradient-to-r from-amber-100 via-pink-300 to-purple-300 w-full h-[clamp(400px,50vw,550px)]  p-5 lg:p-10 w-full">
+
+        <div class="flex flex-col -gap-10 w-[50%]">
+            <div
+                class="bg-purple-200 w-max px-[9px] py-[2px] rounded-2xl  text-purple-600 text-[13px]  md:text-sm font-semibold mb-10 lg:mb-12">
+                <span class="text-[13px]"> New Arrivals</span>
+            </div>
+            <span class="font-bold w-max [font-size:clamp(20px,3.5vw,3rem)]">Discover Products </span>
+            <p class="font-bold -mt-3 md:-mt-4 lg:-mt-4 [font-size:clamp(20px,3.5vw,3rem)]  ">Beyond The </p>
+            <p class="font-extrabold -mt-4 lg:-mt-6 [font-size:clamp(25px,4vw,3.75rem)] text-purple-500">Mainstream
+            </p>
+            <div class="flex flex-col lg:flex-row  lg:gap-4 ">
+
+                <div
+                    class="flex justify-center item-center px-[12px] py-[8px] mt-5 lg:mt-10  bg-black text-white w-max rounded-3xl border-[1px] border-slate-400">
+                    <span class="[font-size:clamp(12px,2vw,16px)]">Explore
+                        Products</span>
+                </div>
+                <div
+                    class="flex justify-center item-center px-[12px] py-[8px] mt-3 lg:mt-10  backdrop-blur-md bg-white/40 w-max rounded-3xl border-[1px] border-slate-400">
+                    <span class="[font-size:clamp(12px,2vw,16px)]">Explore
+                        Categories</span>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="flex flex-col items-end w-[50%]">
+            <div class="bg-white/30 rounded-2xl w-max h-max relative rotate-[5deg] md:-left-[30px] lg:-left-[100px]">
+                <div
+                    class="hover:scale-110 transition-transform duration-300  backdrop-blur-sm bg-white/10  rounded-2xl p-2">
+                    <p class="text-black text-xs font-semibold hidden lg:block">Urban Backpack</p>
+                    <span class="text-gray-500 text-xs hidden lg:block">Street Edition</span>
+                    <img class=" h-[clamp(70px,15vw,150px)] "
+                        src="https://res.cloudinary.com/dhv600hjo/image/upload/v1792907296/mnopberi32zhepixehzm.png"
+                        alt="bag" />
+                    <div class="flex justify-between">
+                        <span class="text-[12px] hidden lg:block">₹1600</span>
+                        <div id="bagBtn" class="hidden lg:block">
+                            <svg id="bag_like" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912ZM19.3684 12.1206L12.0002 19.4842L4.63521 12.1191C3.12192 10.6058 3.12192 8.15232 4.63521 6.63904C6.14849 5.12575 8.602 5.12575 10.1153 6.63904L11.4727 7.99648C11.7706 8.29435 12.2553 8.28854 12.5459 7.98363L13.8806 6.63978C15.3977 5.12268 17.8528 5.12268 19.3699 6.63978C20.8836 8.15343 20.881 10.5997 19.3684 12.1206Z"
+                                    fill="#212121" />
+                            </svg>
+                            <svg id="bag_liked" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912Z"
+                                    fill="#212121" />
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white/30 rounded-2xl w-max h-max relative -left-[65px] -top-[30px] md:-left-[220px] md:-top-[90px] rotate-[2deg] lg:-left-[350px] lg:-top-[210px]">
+                <div
+                    class="hover:scale-110 transition-transform duration-300 backdrop-blur-sm bg-white/10  rounded-2xl p-2">
+                    <p class="text-black text-xs font-semibold hidden lg:block">Polo</p>
+                    <span class="text-gray-500 text-xs hidden lg:block">Chocolaty Brown</span>
+                    <div class="w-full flex items-end">
+
+                        <img class=" h-[clamp(70px,15vw,150px)] "
+                            src="https://res.cloudinary.com/dhv600hjo/image/upload/v1792907296/qezp03a4w5z0vl2lshsy.png"
+                            alt="bag" />
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-[12px] hidden lg:block">₹1098</span>
+                        <div id="" class="hidden lg:block" onclick="like('polo_like', 'polo_liked')">
+                            <svg id="polo_like" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912ZM19.3684 12.1206L12.0002 19.4842L4.63521 12.1191C3.12192 10.6058 3.12192 8.15232 4.63521 6.63904C6.14849 5.12575 8.602 5.12575 10.1153 6.63904L11.4727 7.99648C11.7706 8.29435 12.2553 8.28854 12.5459 7.98363L13.8806 6.63978C15.3977 5.12268 17.8528 5.12268 19.3699 6.63978C20.8836 8.15343 20.881 10.5997 19.3684 12.1206Z"
+                                    fill="#212121" />
+                            </svg>
+                            <svg id="polo_liked" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912Z"
+                                    fill="#212121" />
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white/30 rounded-2xl w-max h-max  relative -top-[50px] rotate-[5deg] md:-left-[50px] md:-top-[90px] -rotate-[1deg] lg:-left-[350px] lg:-top-[190px]">
+                <div
+                    class="hover:scale-110 transition-transform duration-300 backdrop-blur-sm bg-white/10  rounded-2xl p-2">
+                    <p class="text-black text-xs font-semibold hidden lg:block">Retro Sneaker</p>
+                    <span class="text-gray-500 text-xs hidden lg:block">Street Style</span>
+                    <img class=" h-[clamp(70px,15vw,150px)] "
+                        src="https://res.cloudinary.com/dhv600hjo/image/upload/v1792907298/fs0qf5acf5ski31w0xkb.png"
+                        alt="bag" />
+                    <div class="flex justify-between">
+                        <span class="text-[12px] hidden lg:block">₹2,299</span>
+                        <div id="shoesBtn" class="hidden lg:block">
+                            <svg id="shoes_like" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912ZM19.3684 12.1206L12.0002 19.4842L4.63521 12.1191C3.12192 10.6058 3.12192 8.15232 4.63521 6.63904C6.14849 5.12575 8.602 5.12575 10.1153 6.63904L11.4727 7.99648C11.7706 8.29435 12.2553 8.28854 12.5459 7.98363L13.8806 6.63978C15.3977 5.12268 17.8528 5.12268 19.3699 6.63978C20.8836 8.15343 20.881 10.5997 19.3684 12.1206Z"
+                                    fill="#212121" />
+                            </svg>
+                            <svg id="shoes_liked" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912Z"
+                                    fill="#212121" />
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white/30 rounded-2xl w-max h-max relative -top-[60px] -left-[90px] -rotate-[0deg] md:-left-[220px] md:-top-[200px] -rotate-[3deg] lg:-left-[100px] lg:-top-[400px]">
+                <div
+                    class="hover:scale-110 transition-transform duration-300 backdrop-blur-sm bg-white/10  rounded-2xl p-2">
+                    <p class="text-black text-xs font-semibold hidden lg:block">Minimal Watch</p>
+                    <span class="text-gray-500 text-xs hidden lg:block">Splendid Silver</span>
+                    <img class=" h-[clamp(70px,15vw,150px)] "
+                        src="https://res.cloudinary.com/dhv600hjo/image/upload/v1792907295/g7azkatu0enc574gu1gb.png"
+                        alt="bag" />
+                    <div class="flex justify-between">
+                        <span class="text-[12px] hidden lg:block">₹2,999</span>
+                        <div id="watchBtn" class="hidden lg:block">
+                            <svg id="watch_like" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912ZM19.3684 12.1206L12.0002 19.4842L4.63521 12.1191C3.12192 10.6058 3.12192 8.15232 4.63521 6.63904C6.14849 5.12575 8.602 5.12575 10.1153 6.63904L11.4727 7.99648C11.7706 8.29435 12.2553 8.28854 12.5459 7.98363L13.8806 6.63978C15.3977 5.12268 17.8528 5.12268 19.3699 6.63978C20.8836 8.15343 20.881 10.5997 19.3684 12.1206Z"
+                                    fill="#212121" />
+                            </svg>
+                            <svg id="watch_liked" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912Z"
+                                    fill="#212121" />
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="px-0 lg:px-5 m-5 lg:m-20">
+        <span class="font-bold text-2xl mb-10">
+            Categories
+        </span>
+        <div class="hidden lg:flex justify-between w-full lg:px-20 pt-5 gap-2">
+            <div
+                class="h-[250px] w-1/2 lg:w-[150px] backdrop-blur-sm bg-white/40 border-[1px]  border-slate-400  rounded-[18px]">
+                <img class="h-[200px] rounded-t-2xl"
+                    src="https://www.bringitonline.in/uploads/2/2/4/5/22456530/trendy-t-shirt-lookbook-photography-56_orig.jpg"
+                    alt="tshirt_photo" />
+                <div class="flex items-center justify-center mt-3">
+                    <span class="font-medium text-lg">Upperwear</span>
+                </div>
+            </div>
+            <div
+                class="h-[250px] w-[150px] backdrop-blur-sm bg-white/40 border-[1px] mb-5 border-slate-400  rounded-[18px]">
+                <img class="h-[200px] rounded-t-2xl"
+                    src="https://voilastudio.in/voilastudio_myntra/images/male_ecomm/male_ecomm/eCommerce_photography_male_trackpant&joggers_25-02-2026%20(85).webp"
+                    alt="pant_photo" />
+                <div class="flex items-center justify-center mt-3">
+                    <span class="font-medium text-lg">Bottomwear</span>
+                </div>
+            </div>
+            <div class="h-[250px] w-[150px] backdrop-blur-sm bg-white/40 border-[1px] border-slate-400  rounded-[18px]">
+                <img class="h-[200px]  rounded-t-2xl"
+                    src="https://twofacesmedia.com/wp-content/uploads/2025/03/Lifestyle-Watch-Photography-in-India.jpg"
+                    alt="shoes_photo" />
+                <div class="flex justify-center items-center  mt-3">
+                    <span class="font-medium text-lg">Watch</span>
+                </div>
+            </div>
+            <div class="h-[250px] w-[150px] backdrop-blur-sm bg-white/40 border-[1px] border-slate-400  rounded-[18px]">
+
+                <img class="h-[200px] object-cover rounded-t-2xl p-5 bg-blue-50"
+                    src="https://res.cloudinary.com/dhv600hjo/image/upload/v1792907296/mnopberi32zhepixehzm.png"
+                    alt="tshirt_photo" />
+                <div class="flex items-center justify-center mt-3">
+                    <span class="font-medium text-lg">Bags</span>
+                </div>
+            </div>
+
+            <div
+                class="h-[250px] mt-5 md:mt-0 w-[150px] backdrop-blur-sm bg-white/40 border-[1px] border-slate-400  rounded-[18px]">
+
+                <div class="">
+                    <div class="h-[200px] flex flex-col justify-center items-center">
+                        <div class="flex ">
+
+                            <img class="h-[50px] object-cover rounded-tl-2xl bg-purple-50  w-12 p-1"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Eo9IuSLJs8-yGJa_CouXyRc91gi2u1IWWYn7nyiPpGrU-QWaHnbScK1w&s=10"
+                                alt="hankie_photo" />
+                            <img class="h-[50px] object-cover rounded-tr-2xl bg-purple-50  p-1 w-12"
+                                src="https://5.imimg.com/data5/SELLER/Default/2026/6/619765072/MQ/ML/LC/89066999/e-commerce-cap-photography-red-villa-studio-500x500.jpg"
+                                alt="cap_photo" />
+                        </div>
+                        <div class="flex">
+
+                            <div class="h-[50px] bg-purple-50 rounded-bl-2xl p-1 w-12">
+                                <img class=" object-cover bg-white  rounded-bl-[14px]"
+                                    src="https://res.cloudinary.com/dhv600hjo/image/upload/v1792907298/fs0qf5acf5ski31w0xkb.png"
+                                    alt="tshirt_photo" />
+
+                            </div>
+                            <img class="h-[50px] object-cover rounded-br-2xl bg-purple-50  p-1 w-12"
+                                src="https://5.imimg.com/data5/SELLER/Default/2024/4/414649234/ML/FG/HG/57183086/sw006660-copy.jpg"
+                                alt="tshirt_photo" />
+                        </div>
+
+
+                    </div>
+                    <div class="flex items-center justify-center mt-3">
+                        <span class="font-medium text-lg">Many More</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="flex  md:flex lg:hidden justify-between md:px-10 gap-1">
+
+            <div
+                class="group  relative border-[2px] w-max h-max p-1 border-slate-300 rounded-[50px] hover:border-purple-700 transition-transform hover:scale-110 duration-300">
+                <img class="rounded-full w-[clamp(60px,8vw,80px)]  h-[clamp(60px,8vw,80px)] object-cover"
+                    src="https://www.bringitonline.in/uploads/2/2/4/5/22456530/trendy-t-shirt-lookbook-photography-56_orig.jpg"
+                    alt="tshirt_photo" />
+                <div class="absolute inset-1 opacity-0 group-hover:opacity-100 
+                        backdrop-blur-[1px] bg-black/40 rounded-full transition-opacity flex items-center justify-center">
+                    <span class="text-[12px] text-white">Upperwear</span>
+                </div>
+            </div>
+        <div
+            class="group relative border-2 w-max p-1 border-slate-300 rounded-full hover:border-purple-700 transition-all duration-300 hover:scale-110">
+
+            <img class="rounded-full w-[clamp(60px,8vw,80px)]  h-[clamp(60px,8vw,80px)] object-cover"
+                src="https://voilastudio.in/voilastudio_myntra/images/male_ecomm/male_ecomm/eCommerce_photography_male_trackpant&joggers_25-02-2026%20(85).webp"
+                alt="Bottomwear" />
+
+            <div class="absolute inset-1 rounded-full flex justify-center items-center
+                bg-black/40 backdrop-blur-[1px]
+                opacity-0 group-hover:opacity-100
+                transition-opacity duration-300">
+                <span class="text-[12px] text-white">Bottomwear</span>
+            </div>
+
+        </div>
+
+        
+            <div
+                class="group relative border-[2px] w-max p-1 border-slate-300 rounded-[50px] hover:border-purple-700 transition-transform hover:scale-110 duration-300">
+                <img class="rounded-full w-[clamp(60px,8vw,80px)]  h-[clamp(60px,8vw,80px)] object-cover"
+                    src="https://twofacesmedia.com/wp-content/uploads/2025/03/Lifestyle-Watch-Photography-in-India.jpg"
+                    alt="watch_image" />
+
+                <div class="absolute inset-1 opacity-0 group-hover:opacity-100 bg-black/40 rounded-full flex items-center justify-center backdrop-blur-[1px] ">
+                    <span class="text-white text-[12px]">Watch</span>
+                </div>
+            </div>
+            <div
+                class="group relative border-[2px] w-max p-1 border-slate-300 rounded-[50px] hover:border-purple-700 transition-transform hover:scale-110 duration-300">
+                <img class="rounded-full w-[clamp(60px,8vw,80px)]  h-[clamp(60px,8vw,80px)] object-cover"
+                    src="https://res.cloudinary.com/dhv600hjo/image/upload/v1792907296/mnopberi32zhepixehzm.png"
+                    alt="bag_image" />
+                <div class="opacity-0 group-hover:opacity-100 absolute inset-1 backdrop-blur-[1px] rounded-full bg-black/40 flex justify-center items-center">
+                    <span class="text-white text-[12px]">Bag</span>
+                </div>
+            </div>
+            <div
+                class="group relative border-[2px] w-max p-1 border-slate-300 rounded-[50px] hover:border-purple-700 transition-transform hover:scale-110 duration-300">
+                <div class="rounded-full w-[clamp(60px,8vw,80px)]  h-[clamp(60px,8vw,80px)] "
+                    alt="" >
+
+                    <div class="w-[clamp(60px,8vw,80px)]  h-[clamp(60px,8vw,80px)] flex flex-col justify-center items-center">
+                        <div class="flex ">
+
+                            <img class="object-cover rounded-tl-full bg-purple-50 w-[clamp(30px,5vw,30px)]  h-[clamp(30px,5vw,30px)] p-1"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Eo9IuSLJs8-yGJa_CouXyRc91gi2u1IWWYn7nyiPpGrU-QWaHnbScK1w&s=10"
+                                alt="hankie_photo" />
+                            <img class=" object-cover rounded-tr-full bg-purple-50  w-[clamp(30px,5vw,30px)]  h-[clamp(30px,5vw,30px)] p-1 "
+                                src="https://5.imimg.com/data5/SELLER/Default/2026/6/619765072/MQ/ML/LC/89066999/e-commerce-cap-photography-red-villa-studio-500x500.jpg"
+                                alt="cap_photo" />
+                        </div>
+                        <div class="flex">
+
+                            <div class=" bg-purple-50 rounded-bl-full p-1  w-[clamp(30px,5vw,30px)]  h-[clamp(20px,5vw,30px)]">
+                                <img class=" object-cover bg-white  rounded-bl-full"
+                                    src="https://res.cloudinary.com/dhv600hjo/image/upload/v1792907298/fs0qf5acf5ski31w0xkb.png"
+                                    alt="tshirt_photo" />
+
+                            </div>
+                            <img class=" object-cover rounded-br-full bg-purple-50  w-[clamp(30px,5vw,30px)]  h-[clamp(30px,5vw,30px)] p-1 "
+                                src="https://5.imimg.com/data5/SELLER/Default/2024/4/414649234/ML/FG/HG/57183086/sw006660-copy.jpg"
+                                alt="tshirt_photo" />
+                        </div>
+
+
+                    </div>
+                    
+                
+                </div>
+                <div class="opacity-0 group-hover:opacity-100 backdrop-blur-[1px] bg-black/40 absolute inset-1 rounded-full flex items-center justify-center">
+                    <span class="text-white text-[12px]">More</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+    <div class="mx-8 lg:px-5 m-20 lg:m-20">
+        <span class="font-bold text-2xl mb-10">
+            Trends
+        </span>
+        <div>
+            <div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:grid-cols-6">
+                    <div class="lg:w-max rounded-2xl border-[2px] border-slate-200 p-4 flex flex-col ">
+                    
+                        <div class="flex w-full justify-center items-center">
+
+                            <img class="rounded-xl mb-5 md:w-[clamp(100px,80vw,150px)] h-[clamp(150px,80vw,200px)] " src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="" />
+                        </div>
+                    <div>
+                        <span class="font-semibold text-[18px]">Black Tshirt</span>
+                        <div class="flex justify-between">
+                            <span>₹599</span>
+                            <div class="flex gap-1 mb-5">
+                               <div id="blackTLike" class="" onclick="like('blackTlike', 'blackTliked')">
+                                <svg id="blackTlike" class="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912ZM19.3684 12.1206L12.0002 19.4842L4.63521 12.1191C3.12192 10.6058 3.12192 8.15232 4.63521 6.63904C6.14849 5.12575 8.602 5.12575 10.1153 6.63904L11.4727 7.99648C11.7706 8.29435 12.2553 8.28854 12.5459 7.98363L13.8806 6.63978C15.3977 5.12268 17.8528 5.12268 19.3699 6.63978C20.8836 8.15343 20.881 10.5997 19.3684 12.1206Z"
+                                        fill="#212121" />
+                                </svg>
+                                <svg id="blackTliked" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912Z"
+                                        fill="#212121" />
+                                </svg>
+                                </div>
+                                <div onclick="addtocart('cart', 'carted')">
+                                    <svg id="cart" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 7V5C7 3.34315 8.34315 2 10 2C10.7684 2 11.4692 2.28886 12 2.7639C12.5308 2.28885 13.2317 2 14 2C15.6569 2 17 3.34315 17 5V7H18.5C19.3284 7 20 7.67157 20 8.5V11.4982C19.5258 11.3004 19.0232 11.1572 18.5 11.0764V8.5H14.51V11.727C13.9592 12.0129 13.4545 12.3752 13.01 12.8V8.5H5.5V18C5.5 19.3807 6.61929 20.5 8 20.5H11.7322C12.0194 21.051 12.3832 21.5557 12.8096 22H8C5.79086 22 4 20.2091 4 18V8.5C4 7.67157 4.67157 7 5.5 7H7ZM11.5 7V5C11.5 4.17157 10.8284 3.5 10 3.5C9.17157 3.5 8.5 4.17157 8.5 5V7H11.5ZM13 7H15.5V5C15.5 4.17157 14.8284 3.5 14 3.5C13.535 3.5 13.1195 3.71156 12.8444 4.04368C12.9453 4.34403 13 4.66563 13 5V7ZM17.5 12C20.5376 12 23 14.4624 23 17.5C23 20.5376 20.5376 23 17.5 23C14.4624 23 12 20.5376 12 17.5C12 14.4624 14.4624 12 17.5 12ZM18.0011 20.5035L18.0006 18H20.4966C20.7725 18 20.9961 17.7762 20.9961 17.5C20.9961 17.2239 20.7725 17 20.4966 17H18.0005L18 14.4993C18 14.2231 17.7761 13.9993 17.5 13.9993C17.2239 13.9993 17 14.2231 17 14.4993L17.0005 17H14.4956C14.2197 17 13.9961 17.2239 13.9961 17.5C13.9961 17.7762 14.2197 18 14.4956 18H17.0006L17.0011 20.5035C17.0011 20.7797 17.225 21.0035 17.5011 21.0035C17.7773 21.0035 18.0011 20.7797 18.0011 20.5035Z" fill="#212121"/>
+                                    </svg>
+
+                                    <svg id="carted" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 7V5C7 3.34315 8.34315 2 10 2C10.7684 2 11.4692 2.28886 12 2.7639C12.5308 2.28886 13.2317 2 14 2C15.6569 2 17 3.34315 17 5V7H18.5C19.3284 7 20 7.67157 20 8.5V11.4982C19.2304 11.1772 18.3859 11 17.5 11C16.4179 11 15.3975 11.2644 14.5 11.7322V7H15.5V5C15.5 4.17157 14.8284 3.5 14 3.5C13.535 3.5 13.1195 3.71156 12.8443 4.04367C12.9453 4.34403 13 4.66563 13 5V12.8096C11.7673 13.9925 11 15.6566 11 17.5C11 19.2465 11.6888 20.8321 12.8096 22H8C5.79086 22 4 20.2091 4 18V8.5C4 7.67157 4.67157 7 5.5 7H7ZM8.5 5V7H11.5V5C11.5 4.17157 10.8284 3.5 10 3.5C9.17157 3.5 8.5 4.17157 8.5 5ZM17.5 12C20.5376 12 23 14.4624 23 17.5C23 20.5376 20.5376 23 17.5 23C14.4624 23 12 20.5376 12 17.5C12 14.4624 14.4624 12 17.5 12ZM18.0011 20.5035L18.0006 18H20.4966C20.7725 18 20.9961 17.7762 20.9961 17.5C20.9961 17.2239 20.7725 17 20.4966 17H18.0005L18 14.4993C18 14.2231 17.7761 13.9993 17.5 13.9993C17.2239 13.9993 17 14.2231 17 14.4993L17.0005 17H14.4956C14.2197 17 13.9961 17.2239 13.9961 17.5C13.9961 17.7762 14.2197 18 14.4956 18H17.0006L17.0011 20.5035C17.0011 20.7797 17.225 21.0035 17.5011 21.0035C17.7773 21.0035 18.0011 20.7797 18.0011 20.5035Z" fill="#212121"/>
+                                        </svg>
+                                </div>
+                                 
+
+                        </div> 
+
+                        
+                            </div>
+                            
+                            <div class="flex justify-between gap-1 " >
+                            
+                                <div class="bg-purple-600 p-1 w-full h-10 rounded-lg flex justify-center items-center "><span class="text-[14px] text-white font-medium">Buy Now</span></div>
+                            </div>
+                    </div>
+                </div>
+                    <div class="lg:w-max rounded-2xl border-[2px] border-slate-200 p-4 flex flex-col ">
+                        <div class="flex w-full justify-center items-center">
+
+                            <img class="rounded-xl mb-5 md:w-[clamp(100px,80vw,150px)] h-[clamp(150px,80vw,200px)] " src="https://images.unsplash.com/photo-1789110520410-4fce7246f844?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="" />
+                        
+                        </div>
+                        <div>
+                            <span class="font-semibold text-[18px]">Green Pant</span>
+                        <div class="flex justify-between">
+                            <span>₹599</span>
+                            <div class="flex gap-1 mb-5">
+                               <div id="blackTLike" class="" onclick="like('greenpant_like', 'greenpant_liked')">
+                                <svg id="greenpant_like" class="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912ZM19.3684 12.1206L12.0002 19.4842L4.63521 12.1191C3.12192 10.6058 3.12192 8.15232 4.63521 6.63904C6.14849 5.12575 8.602 5.12575 10.1153 6.63904L11.4727 7.99648C11.7706 8.29435 12.2553 8.28854 12.5459 7.98363L13.8806 6.63978C15.3977 5.12268 17.8528 5.12268 19.3699 6.63978C20.8836 8.15343 20.881 10.5997 19.3684 12.1206Z"
+                                        fill="#212121" />
+                                </svg>
+                                <svg id="greenpant_liked" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912Z"
+                                        fill="#212121" />
+                                </svg>
+                                </div>
+                                <div onclick="addtocart('pant_cart', 'pant_carted')">
+                                    <svg id="pant_cart" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 7V5C7 3.34315 8.34315 2 10 2C10.7684 2 11.4692 2.28886 12 2.7639C12.5308 2.28885 13.2317 2 14 2C15.6569 2 17 3.34315 17 5V7H18.5C19.3284 7 20 7.67157 20 8.5V11.4982C19.5258 11.3004 19.0232 11.1572 18.5 11.0764V8.5H14.51V11.727C13.9592 12.0129 13.4545 12.3752 13.01 12.8V8.5H5.5V18C5.5 19.3807 6.61929 20.5 8 20.5H11.7322C12.0194 21.051 12.3832 21.5557 12.8096 22H8C5.79086 22 4 20.2091 4 18V8.5C4 7.67157 4.67157 7 5.5 7H7ZM11.5 7V5C11.5 4.17157 10.8284 3.5 10 3.5C9.17157 3.5 8.5 4.17157 8.5 5V7H11.5ZM13 7H15.5V5C15.5 4.17157 14.8284 3.5 14 3.5C13.535 3.5 13.1195 3.71156 12.8444 4.04368C12.9453 4.34403 13 4.66563 13 5V7ZM17.5 12C20.5376 12 23 14.4624 23 17.5C23 20.5376 20.5376 23 17.5 23C14.4624 23 12 20.5376 12 17.5C12 14.4624 14.4624 12 17.5 12ZM18.0011 20.5035L18.0006 18H20.4966C20.7725 18 20.9961 17.7762 20.9961 17.5C20.9961 17.2239 20.7725 17 20.4966 17H18.0005L18 14.4993C18 14.2231 17.7761 13.9993 17.5 13.9993C17.2239 13.9993 17 14.2231 17 14.4993L17.0005 17H14.4956C14.2197 17 13.9961 17.2239 13.9961 17.5C13.9961 17.7762 14.2197 18 14.4956 18H17.0006L17.0011 20.5035C17.0011 20.7797 17.225 21.0035 17.5011 21.0035C17.7773 21.0035 18.0011 20.7797 18.0011 20.5035Z" fill="#212121"/>
+                                    </svg>
+
+                                    <svg id="pant_carted" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 7V5C7 3.34315 8.34315 2 10 2C10.7684 2 11.4692 2.28886 12 2.7639C12.5308 2.28886 13.2317 2 14 2C15.6569 2 17 3.34315 17 5V7H18.5C19.3284 7 20 7.67157 20 8.5V11.4982C19.2304 11.1772 18.3859 11 17.5 11C16.4179 11 15.3975 11.2644 14.5 11.7322V7H15.5V5C15.5 4.17157 14.8284 3.5 14 3.5C13.535 3.5 13.1195 3.71156 12.8443 4.04367C12.9453 4.34403 13 4.66563 13 5V12.8096C11.7673 13.9925 11 15.6566 11 17.5C11 19.2465 11.6888 20.8321 12.8096 22H8C5.79086 22 4 20.2091 4 18V8.5C4 7.67157 4.67157 7 5.5 7H7ZM8.5 5V7H11.5V5C11.5 4.17157 10.8284 3.5 10 3.5C9.17157 3.5 8.5 4.17157 8.5 5ZM17.5 12C20.5376 12 23 14.4624 23 17.5C23 20.5376 20.5376 23 17.5 23C14.4624 23 12 20.5376 12 17.5C12 14.4624 14.4624 12 17.5 12ZM18.0011 20.5035L18.0006 18H20.4966C20.7725 18 20.9961 17.7762 20.9961 17.5C20.9961 17.2239 20.7725 17 20.4966 17H18.0005L18 14.4993C18 14.2231 17.7761 13.9993 17.5 13.9993C17.2239 13.9993 17 14.2231 17 14.4993L17.0005 17H14.4956C14.2197 17 13.9961 17.2239 13.9961 17.5C13.9961 17.7762 14.2197 18 14.4956 18H17.0006L17.0011 20.5035C17.0011 20.7797 17.225 21.0035 17.5011 21.0035C17.7773 21.0035 18.0011 20.7797 18.0011 20.5035Z" fill="#212121"/>
+                                        </svg>
+                                </div>
+                                
+
+                        </div> 
+
+                        
+                            </div>
+                            
+                            <div class="flex justify-between gap-1 " >
+                            
+                                <div class="bg-purple-600 p-1 w-full h-10 rounded-lg flex justify-center items-center "><span class="text-[14px] text-white font-medium">Buy Now</span></div>
+                            </div>
+                    </div>
+                </div>
+                    <div class="lg:w-max rounded-2xl border-[2px] border-slate-200 p-4 flex flex-col ">
+                        <div class="flex w-full justify-center items-center">
+
+                            <img class="rounded-xl mb-5 md:w-[clamp(100px,80vw,150px)] h-[clamp(150px,80vw,200px)] " 
+                            src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="" />
+                        </div>
+                        <div>
+                            <span class="font-semibold text-[18px]">Classic Watch</span>
+                        <div class="flex justify-between">
+                            <span>₹599</span>
+                            <div class="flex gap-1 mb-5">
+                               <div onclick="like('watchs_like', 'watche_liked')">
+                                <svg id="watchs_like" class="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912ZM19.3684 12.1206L12.0002 19.4842L4.63521 12.1191C3.12192 10.6058 3.12192 8.15232 4.63521 6.63904C6.14849 5.12575 8.602 5.12575 10.1153 6.63904L11.4727 7.99648C11.7706 8.29435 12.2553 8.28854 12.5459 7.98363L13.8806 6.63978C15.3977 5.12268 17.8528 5.12268 19.3699 6.63978C20.8836 8.15343 20.881 10.5997 19.3684 12.1206Z"
+                                        fill="#212121" />
+                                </svg>
+                                <svg id="watche_liked" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912Z"
+                                        fill="#212121" />
+                                </svg>
+                                </div>
+                                <div onclick="addtocart('watch_cart', 'watch_carted')">
+                                    <svg id="watch_cart" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 7V5C7 3.34315 8.34315 2 10 2C10.7684 2 11.4692 2.28886 12 2.7639C12.5308 2.28885 13.2317 2 14 2C15.6569 2 17 3.34315 17 5V7H18.5C19.3284 7 20 7.67157 20 8.5V11.4982C19.5258 11.3004 19.0232 11.1572 18.5 11.0764V8.5H14.51V11.727C13.9592 12.0129 13.4545 12.3752 13.01 12.8V8.5H5.5V18C5.5 19.3807 6.61929 20.5 8 20.5H11.7322C12.0194 21.051 12.3832 21.5557 12.8096 22H8C5.79086 22 4 20.2091 4 18V8.5C4 7.67157 4.67157 7 5.5 7H7ZM11.5 7V5C11.5 4.17157 10.8284 3.5 10 3.5C9.17157 3.5 8.5 4.17157 8.5 5V7H11.5ZM13 7H15.5V5C15.5 4.17157 14.8284 3.5 14 3.5C13.535 3.5 13.1195 3.71156 12.8444 4.04368C12.9453 4.34403 13 4.66563 13 5V7ZM17.5 12C20.5376 12 23 14.4624 23 17.5C23 20.5376 20.5376 23 17.5 23C14.4624 23 12 20.5376 12 17.5C12 14.4624 14.4624 12 17.5 12ZM18.0011 20.5035L18.0006 18H20.4966C20.7725 18 20.9961 17.7762 20.9961 17.5C20.9961 17.2239 20.7725 17 20.4966 17H18.0005L18 14.4993C18 14.2231 17.7761 13.9993 17.5 13.9993C17.2239 13.9993 17 14.2231 17 14.4993L17.0005 17H14.4956C14.2197 17 13.9961 17.2239 13.9961 17.5C13.9961 17.7762 14.2197 18 14.4956 18H17.0006L17.0011 20.5035C17.0011 20.7797 17.225 21.0035 17.5011 21.0035C17.7773 21.0035 18.0011 20.7797 18.0011 20.5035Z" fill="#212121"/>
+                                    </svg>
+
+                                    <svg id="watch_carted" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 7V5C7 3.34315 8.34315 2 10 2C10.7684 2 11.4692 2.28886 12 2.7639C12.5308 2.28886 13.2317 2 14 2C15.6569 2 17 3.34315 17 5V7H18.5C19.3284 7 20 7.67157 20 8.5V11.4982C19.2304 11.1772 18.3859 11 17.5 11C16.4179 11 15.3975 11.2644 14.5 11.7322V7H15.5V5C15.5 4.17157 14.8284 3.5 14 3.5C13.535 3.5 13.1195 3.71156 12.8443 4.04367C12.9453 4.34403 13 4.66563 13 5V12.8096C11.7673 13.9925 11 15.6566 11 17.5C11 19.2465 11.6888 20.8321 12.8096 22H8C5.79086 22 4 20.2091 4 18V8.5C4 7.67157 4.67157 7 5.5 7H7ZM8.5 5V7H11.5V5C11.5 4.17157 10.8284 3.5 10 3.5C9.17157 3.5 8.5 4.17157 8.5 5ZM17.5 12C20.5376 12 23 14.4624 23 17.5C23 20.5376 20.5376 23 17.5 23C14.4624 23 12 20.5376 12 17.5C12 14.4624 14.4624 12 17.5 12ZM18.0011 20.5035L18.0006 18H20.4966C20.7725 18 20.9961 17.7762 20.9961 17.5C20.9961 17.2239 20.7725 17 20.4966 17H18.0005L18 14.4993C18 14.2231 17.7761 13.9993 17.5 13.9993C17.2239 13.9993 17 14.2231 17 14.4993L17.0005 17H14.4956C14.2197 17 13.9961 17.2239 13.9961 17.5C13.9961 17.7762 14.2197 18 14.4956 18H17.0006L17.0011 20.5035C17.0011 20.7797 17.225 21.0035 17.5011 21.0035C17.7773 21.0035 18.0011 20.7797 18.0011 20.5035Z" fill="#212121"/>
+                                        </svg>
+                                </div>
+                                
+
+                        </div> 
+
+                        
+                            </div>
+                            
+                            <div class="flex justify-between gap-1 " >
+                            
+                                <div class="bg-purple-600 p-1 w-full h-10 rounded-lg flex justify-center items-center "><span class="text-[14px] text-white font-medium">Buy Now</span></div>
+                            </div>
+                    </div>
+                </div>
+                    <div class="lg:w-max rounded-2xl border-[2px] border-slate-200 p-4 flex flex-col ">
+                        <div class="flex w-full justify-center items-center">
+
+                            <img class="rounded-xl mb-5 md:w-[clamp(100px,80vw,150px)] h-[clamp(150px,80vw,200px)] " src="https://images.unsplash.com/photo-1603808033192-082d6919d3e1?q=80&w=1015&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Shoes" />
+                        </div><div>
+                            <span class="font-semibold text-[18px]">Shoes</span>
+                        <div class="flex justify-between">
+                            <span>₹599</span>
+                            <div class="flex gap-1 mb-5">
+                               <div id="blackTLike" class="" onclick="like('shoeslike', 'shoesliked')">
+                                <svg id="shoeslike" class="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912ZM19.3684 12.1206L12.0002 19.4842L4.63521 12.1191C3.12192 10.6058 3.12192 8.15232 4.63521 6.63904C6.14849 5.12575 8.602 5.12575 10.1153 6.63904L11.4727 7.99648C11.7706 8.29435 12.2553 8.28854 12.5459 7.98363L13.8806 6.63978C15.3977 5.12268 17.8528 5.12268 19.3699 6.63978C20.8836 8.15343 20.881 10.5997 19.3684 12.1206Z"
+                                        fill="#212121" />
+                                </svg>
+                                <svg id="shoesliked" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912Z"
+                                        fill="#212121" />
+                                </svg>
+                                </div>
+                                <div onclick="addtocart('shoes_cart', 'shoes_carted')">
+                                    <svg id="shoes_cart" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 7V5C7 3.34315 8.34315 2 10 2C10.7684 2 11.4692 2.28886 12 2.7639C12.5308 2.28885 13.2317 2 14 2C15.6569 2 17 3.34315 17 5V7H18.5C19.3284 7 20 7.67157 20 8.5V11.4982C19.5258 11.3004 19.0232 11.1572 18.5 11.0764V8.5H14.51V11.727C13.9592 12.0129 13.4545 12.3752 13.01 12.8V8.5H5.5V18C5.5 19.3807 6.61929 20.5 8 20.5H11.7322C12.0194 21.051 12.3832 21.5557 12.8096 22H8C5.79086 22 4 20.2091 4 18V8.5C4 7.67157 4.67157 7 5.5 7H7ZM11.5 7V5C11.5 4.17157 10.8284 3.5 10 3.5C9.17157 3.5 8.5 4.17157 8.5 5V7H11.5ZM13 7H15.5V5C15.5 4.17157 14.8284 3.5 14 3.5C13.535 3.5 13.1195 3.71156 12.8444 4.04368C12.9453 4.34403 13 4.66563 13 5V7ZM17.5 12C20.5376 12 23 14.4624 23 17.5C23 20.5376 20.5376 23 17.5 23C14.4624 23 12 20.5376 12 17.5C12 14.4624 14.4624 12 17.5 12ZM18.0011 20.5035L18.0006 18H20.4966C20.7725 18 20.9961 17.7762 20.9961 17.5C20.9961 17.2239 20.7725 17 20.4966 17H18.0005L18 14.4993C18 14.2231 17.7761 13.9993 17.5 13.9993C17.2239 13.9993 17 14.2231 17 14.4993L17.0005 17H14.4956C14.2197 17 13.9961 17.2239 13.9961 17.5C13.9961 17.7762 14.2197 18 14.4956 18H17.0006L17.0011 20.5035C17.0011 20.7797 17.225 21.0035 17.5011 21.0035C17.7773 21.0035 18.0011 20.7797 18.0011 20.5035Z" fill="#212121"/>
+                                    </svg>
+
+                                    <svg id="shoes_carted" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 7V5C7 3.34315 8.34315 2 10 2C10.7684 2 11.4692 2.28886 12 2.7639C12.5308 2.28886 13.2317 2 14 2C15.6569 2 17 3.34315 17 5V7H18.5C19.3284 7 20 7.67157 20 8.5V11.4982C19.2304 11.1772 18.3859 11 17.5 11C16.4179 11 15.3975 11.2644 14.5 11.7322V7H15.5V5C15.5 4.17157 14.8284 3.5 14 3.5C13.535 3.5 13.1195 3.71156 12.8443 4.04367C12.9453 4.34403 13 4.66563 13 5V12.8096C11.7673 13.9925 11 15.6566 11 17.5C11 19.2465 11.6888 20.8321 12.8096 22H8C5.79086 22 4 20.2091 4 18V8.5C4 7.67157 4.67157 7 5.5 7H7ZM8.5 5V7H11.5V5C11.5 4.17157 10.8284 3.5 10 3.5C9.17157 3.5 8.5 4.17157 8.5 5ZM17.5 12C20.5376 12 23 14.4624 23 17.5C23 20.5376 20.5376 23 17.5 23C14.4624 23 12 20.5376 12 17.5C12 14.4624 14.4624 12 17.5 12ZM18.0011 20.5035L18.0006 18H20.4966C20.7725 18 20.9961 17.7762 20.9961 17.5C20.9961 17.2239 20.7725 17 20.4966 17H18.0005L18 14.4993C18 14.2231 17.7761 13.9993 17.5 13.9993C17.2239 13.9993 17 14.2231 17 14.4993L17.0005 17H14.4956C14.2197 17 13.9961 17.2239 13.9961 17.5C13.9961 17.7762 14.2197 18 14.4956 18H17.0006L17.0011 20.5035C17.0011 20.7797 17.225 21.0035 17.5011 21.0035C17.7773 21.0035 18.0011 20.7797 18.0011 20.5035Z" fill="#212121"/>
+                                        </svg>
+                                </div>
+                                
+
+                        </div> 
+
+                        
+                            </div>
+                            
+                            <div class="flex justify-between gap-1 " >
+                            
+                                <div class="bg-purple-600 p-1 w-full h-10 rounded-lg flex justify-center items-center "><span class="text-[14px] text-white font-medium">Buy Now</span></div>
+                            </div>
+                    </div>
+                </div>
+                    <div class="lg:w-max rounded-2xl border-[2px] border-slate-200 p-4 flex flex-col ">
+                        <div class="flex w-full justify-center items-center">
+
+                            <img class="rounded-xl mb-5 md:w-[clamp(100px,80vw,150px)] h-[clamp(150px,80vw,200px)] " src="https://plus.unsplash.com/premium_photo-1691030256088-91089c9e66e9?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="kurta" />
+                        </div>
+                        <div>
+                            <span class="font-semibold text-[18px]">Red Kurta</span>
+                        <div class="flex justify-between">
+                            <span>₹599</span>
+                            <div class="flex gap-1 mb-5">
+                               <div id="blackTLike" class="" onclick="like('kurta_like', 'kurta_liked')">
+                                <svg id="kurta_like" class="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912ZM19.3684 12.1206L12.0002 19.4842L4.63521 12.1191C3.12192 10.6058 3.12192 8.15232 4.63521 6.63904C6.14849 5.12575 8.602 5.12575 10.1153 6.63904L11.4727 7.99648C11.7706 8.29435 12.2553 8.28854 12.5459 7.98363L13.8806 6.63978C15.3977 5.12268 17.8528 5.12268 19.3699 6.63978C20.8836 8.15343 20.881 10.5997 19.3684 12.1206Z"
+                                        fill="#212121" />
+                                </svg>
+                                <svg id="kurta_liked" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912Z"
+                                        fill="#212121" />
+                                </svg>
+                                </div>
+                                <div onclick="addtocart('kurta_cart', 'kurta_carted')">
+                                    <svg id="kurta_cart" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 7V5C7 3.34315 8.34315 2 10 2C10.7684 2 11.4692 2.28886 12 2.7639C12.5308 2.28885 13.2317 2 14 2C15.6569 2 17 3.34315 17 5V7H18.5C19.3284 7 20 7.67157 20 8.5V11.4982C19.5258 11.3004 19.0232 11.1572 18.5 11.0764V8.5H14.51V11.727C13.9592 12.0129 13.4545 12.3752 13.01 12.8V8.5H5.5V18C5.5 19.3807 6.61929 20.5 8 20.5H11.7322C12.0194 21.051 12.3832 21.5557 12.8096 22H8C5.79086 22 4 20.2091 4 18V8.5C4 7.67157 4.67157 7 5.5 7H7ZM11.5 7V5C11.5 4.17157 10.8284 3.5 10 3.5C9.17157 3.5 8.5 4.17157 8.5 5V7H11.5ZM13 7H15.5V5C15.5 4.17157 14.8284 3.5 14 3.5C13.535 3.5 13.1195 3.71156 12.8444 4.04368C12.9453 4.34403 13 4.66563 13 5V7ZM17.5 12C20.5376 12 23 14.4624 23 17.5C23 20.5376 20.5376 23 17.5 23C14.4624 23 12 20.5376 12 17.5C12 14.4624 14.4624 12 17.5 12ZM18.0011 20.5035L18.0006 18H20.4966C20.7725 18 20.9961 17.7762 20.9961 17.5C20.9961 17.2239 20.7725 17 20.4966 17H18.0005L18 14.4993C18 14.2231 17.7761 13.9993 17.5 13.9993C17.2239 13.9993 17 14.2231 17 14.4993L17.0005 17H14.4956C14.2197 17 13.9961 17.2239 13.9961 17.5C13.9961 17.7762 14.2197 18 14.4956 18H17.0006L17.0011 20.5035C17.0011 20.7797 17.225 21.0035 17.5011 21.0035C17.7773 21.0035 18.0011 20.7797 18.0011 20.5035Z" fill="#212121"/>
+                                    </svg>
+
+                                    <svg id="kurta_carted" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 7V5C7 3.34315 8.34315 2 10 2C10.7684 2 11.4692 2.28886 12 2.7639C12.5308 2.28886 13.2317 2 14 2C15.6569 2 17 3.34315 17 5V7H18.5C19.3284 7 20 7.67157 20 8.5V11.4982C19.2304 11.1772 18.3859 11 17.5 11C16.4179 11 15.3975 11.2644 14.5 11.7322V7H15.5V5C15.5 4.17157 14.8284 3.5 14 3.5C13.535 3.5 13.1195 3.71156 12.8443 4.04367C12.9453 4.34403 13 4.66563 13 5V12.8096C11.7673 13.9925 11 15.6566 11 17.5C11 19.2465 11.6888 20.8321 12.8096 22H8C5.79086 22 4 20.2091 4 18V8.5C4 7.67157 4.67157 7 5.5 7H7ZM8.5 5V7H11.5V5C11.5 4.17157 10.8284 3.5 10 3.5C9.17157 3.5 8.5 4.17157 8.5 5ZM17.5 12C20.5376 12 23 14.4624 23 17.5C23 20.5376 20.5376 23 17.5 23C14.4624 23 12 20.5376 12 17.5C12 14.4624 14.4624 12 17.5 12ZM18.0011 20.5035L18.0006 18H20.4966C20.7725 18 20.9961 17.7762 20.9961 17.5C20.9961 17.2239 20.7725 17 20.4966 17H18.0005L18 14.4993C18 14.2231 17.7761 13.9993 17.5 13.9993C17.2239 13.9993 17 14.2231 17 14.4993L17.0005 17H14.4956C14.2197 17 13.9961 17.2239 13.9961 17.5C13.9961 17.7762 14.2197 18 14.4956 18H17.0006L17.0011 20.5035C17.0011 20.7797 17.225 21.0035 17.5011 21.0035C17.7773 21.0035 18.0011 20.7797 18.0011 20.5035Z" fill="#212121"/>
+                                        </svg>
+                                </div>
+                                
+
+                        </div> 
+
+                        
+                            </div>
+                            
+                        <div class="flex justify-between gap-1 " >
+                            
+                            <div class="bg-purple-600 p-1 w-full h-10 rounded-lg flex justify-center items-center "><span class="text-[14px] text-white font-medium">Buy Now</span></div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="lg:w-max rounded-2xl border-[2px] border-slate-200 p-4 flex flex-col ">
+                        <div class="flex w-full justify-center items-center">
+
+                            <img class="rounded-xl mb-5 md:w-[clamp(100px,80vw,150px)] h-[clamp(150px,80vw,200px)] " 
+                            src="https://images.unsplash.com/photo-1763034179057-acad3a072568?q=80&w=1391&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3Dhttps://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Office Bag" />
+                        </div><div>
+                            <span class="font-semibold text-[18px]">Office Bag</span>
+                        <div class="flex justify-between">
+                            <span>₹599</span>
+                            <div class="flex gap-1 mb-5">
+                               <div id="blackTLike" class="" onclick="like('bage_like', 'bags_liked')">
+                                <svg id="bage_like" class="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912ZM19.3684 12.1206L12.0002 19.4842L4.63521 12.1191C3.12192 10.6058 3.12192 8.15232 4.63521 6.63904C6.14849 5.12575 8.602 5.12575 10.1153 6.63904L11.4727 7.99648C11.7706 8.29435 12.2553 8.28854 12.5459 7.98363L13.8806 6.63978C15.3977 5.12268 17.8528 5.12268 19.3699 6.63978C20.8836 8.15343 20.881 10.5997 19.3684 12.1206Z"
+                                        fill="#212121" />
+                                </svg>
+                                <svg id="bags_liked" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.8199 5.57912L11.9992 6.40163L11.1759 5.57838C9.07688 3.47931 5.67361 3.47931 3.57455 5.57838C1.47548 7.67744 1.47548 11.0807 3.57455 13.1798L11.4699 21.0751C11.7628 21.368 12.2377 21.368 12.5306 21.0751L20.432 13.1783C22.5264 11.0723 22.53 7.67857 20.4306 5.57912C18.3277 3.47623 14.9228 3.47623 12.8199 5.57912Z"
+                                        fill="#212121" />
+                                </svg>
+                                </div>
+                                <div onclick="addtocart('bag_cart', 'bag_carted')">
+                                    <svg id="bag_cart" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 7V5C7 3.34315 8.34315 2 10 2C10.7684 2 11.4692 2.28886 12 2.7639C12.5308 2.28885 13.2317 2 14 2C15.6569 2 17 3.34315 17 5V7H18.5C19.3284 7 20 7.67157 20 8.5V11.4982C19.5258 11.3004 19.0232 11.1572 18.5 11.0764V8.5H14.51V11.727C13.9592 12.0129 13.4545 12.3752 13.01 12.8V8.5H5.5V18C5.5 19.3807 6.61929 20.5 8 20.5H11.7322C12.0194 21.051 12.3832 21.5557 12.8096 22H8C5.79086 22 4 20.2091 4 18V8.5C4 7.67157 4.67157 7 5.5 7H7ZM11.5 7V5C11.5 4.17157 10.8284 3.5 10 3.5C9.17157 3.5 8.5 4.17157 8.5 5V7H11.5ZM13 7H15.5V5C15.5 4.17157 14.8284 3.5 14 3.5C13.535 3.5 13.1195 3.71156 12.8444 4.04368C12.9453 4.34403 13 4.66563 13 5V7ZM17.5 12C20.5376 12 23 14.4624 23 17.5C23 20.5376 20.5376 23 17.5 23C14.4624 23 12 20.5376 12 17.5C12 14.4624 14.4624 12 17.5 12ZM18.0011 20.5035L18.0006 18H20.4966C20.7725 18 20.9961 17.7762 20.9961 17.5C20.9961 17.2239 20.7725 17 20.4966 17H18.0005L18 14.4993C18 14.2231 17.7761 13.9993 17.5 13.9993C17.2239 13.9993 17 14.2231 17 14.4993L17.0005 17H14.4956C14.2197 17 13.9961 17.2239 13.9961 17.5C13.9961 17.7762 14.2197 18 14.4956 18H17.0006L17.0011 20.5035C17.0011 20.7797 17.225 21.0035 17.5011 21.0035C17.7773 21.0035 18.0011 20.7797 18.0011 20.5035Z" fill="#212121"/>
+                                    </svg>
+
+                                    <svg id="bag_carted" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 7V5C7 3.34315 8.34315 2 10 2C10.7684 2 11.4692 2.28886 12 2.7639C12.5308 2.28886 13.2317 2 14 2C15.6569 2 17 3.34315 17 5V7H18.5C19.3284 7 20 7.67157 20 8.5V11.4982C19.2304 11.1772 18.3859 11 17.5 11C16.4179 11 15.3975 11.2644 14.5 11.7322V7H15.5V5C15.5 4.17157 14.8284 3.5 14 3.5C13.535 3.5 13.1195 3.71156 12.8443 4.04367C12.9453 4.34403 13 4.66563 13 5V12.8096C11.7673 13.9925 11 15.6566 11 17.5C11 19.2465 11.6888 20.8321 12.8096 22H8C5.79086 22 4 20.2091 4 18V8.5C4 7.67157 4.67157 7 5.5 7H7ZM8.5 5V7H11.5V5C11.5 4.17157 10.8284 3.5 10 3.5C9.17157 3.5 8.5 4.17157 8.5 5ZM17.5 12C20.5376 12 23 14.4624 23 17.5C23 20.5376 20.5376 23 17.5 23C14.4624 23 12 20.5376 12 17.5C12 14.4624 14.4624 12 17.5 12ZM18.0011 20.5035L18.0006 18H20.4966C20.7725 18 20.9961 17.7762 20.9961 17.5C20.9961 17.2239 20.7725 17 20.4966 17H18.0005L18 14.4993C18 14.2231 17.7761 13.9993 17.5 13.9993C17.2239 13.9993 17 14.2231 17 14.4993L17.0005 17H14.4956C14.2197 17 13.9961 17.2239 13.9961 17.5C13.9961 17.7762 14.2197 18 14.4956 18H17.0006L17.0011 20.5035C17.0011 20.7797 17.225 21.0035 17.5011 21.0035C17.7773 21.0035 18.0011 20.7797 18.0011 20.5035Z" fill="#212121"/>
+                                        </svg>
+                                </div>
+                                
+
+                        </div> 
+
+                        
+                            </div>
+                            
+                            <div class="flex justify-between gap-1 " >
+                            
+                                <div class="bg-purple-600 p-1 w-full h-10 rounded-lg flex justify-center items-center "><span class="text-[14px] text-white font-medium">Buy Now</span></div>
+                            </div>
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="bg-linear-to-b from-black via-gray-900 to-black text-gray-300 pt-14 pb-10 px-5">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+            <div>
+                <span class="font-bold text-3xl">Modeva</span>
+                <p class="text-sm text-gray-400 leading-relaxed mb-5">
+                    Premium fashion curated for modern lifestyles.
+                    Quality. Style. Confidence.
+                </p>
+            </div>
+
+
+
+            <div>
+                <div class="flex bg-slate-800 rounded-xl mb-5 pl-2  justify-center w-full items-center">
+                    <input class="focus:outline-none w-full md:w-[300px] h-10  rounded-2xl text-white p-2 "
+                        placeholder="Search...">
+                    <button class="bg-purple-700 hover:bg-purple-800 rounded-r-xl px-1 h-[40px]">Subscribe</button>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+        <div class=" flex justify-equal px-2">
+            <div class="flex flex-col text-[15px] w-full">
+                <span class="font-semibold mb-6">
+                    Shop
+                </span>
+                <div class="flex flex-col gap-3 ">
+                    <span>Home</span>
+                    <span>Trends</span>
+                    <span>Categories</span>
+                    <span>Top 10</span>
+                </div>
+
+            </div>
+            <div class="flex flex-col text-[15px] w-full">
+                <span class="font-semibold mb-6">Information</span>
+                <div class="flex flex-col gap-3 ">
+                    <span>About Us</span>
+                    <span>Contact Us</span>
+                    <span>FAQ's</span>
+                    <span>Blogs</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById("menuBtn")
+        const menu = document.getElementById("menu")
+        const cancel = document.getElementById("cancel")
+        const menuList = document.getElementById("menuList")
+        const search_bar = document.getElementById("search_bar")
+        const poloLike = document.getElementById("polo_like")
+        const shoesLike = document.getElementById("shoes_like")
+        const watchLike = document.getElementById("watch_like")
+        
+        const blackTLike = document.getElementById("blackTlike")
+        
+        const bagLike = document.getElementById("bag_like")
+        const poloLiked = document.getElementById("polo_liked")
+        const shoesLiked = document.getElementById("shoes_liked")
+        const watchLiked = document.getElementById("watch_liked")
+        
+        const blackTLiked = document.getElementById("blackTliked")
+        
+        const bagLiked = document.getElementById("bag_liked")
+        const poloBtn = document.getElementById("poloBtn")
+        const watchBtn = document.getElementById("watchBtn")
+        const shoesBtn = document.getElementById("shoesBtn")
+        const bagBtn = document.getElementById("bagBtn")
+        
+        const blackTBtn = document.getElementById("blackTBtn")
+
+
+        menuBtn.addEventListener('click', () => {
+            search_bar.classList.toggle("hidden");
+            menuList.classList.toggle("hidden");
+            menu.classList.toggle("hidden");
+            cancel.classList.toggle("hidden");
+        })
+
+        poloBtn.addEventListener('click', () => {
+            poloLike.classList.toggle('hidden');
+            poloLiked.classList.toggle('hidden');
+        })
+        shoesBtn.addEventListener('click', () => {
+            shoesLike.classList.toggle('hidden');
+            shoesLiked.classList.toggle('hidden');
+        })
+        watchBtn.addEventListener('click', () => {
+            watchLike.classList.toggle('hidden');
+            watchLiked.classList.toggle('hidden');
+        })
+        bagBtn.addEventListener('click', () => {
+            bagLike.classList.toggle('hidden');
+            bagLiked.classList.toggle('hidden');
+        })
+
+        function like(like, liked){
+            // console.log(like, liked)
+            const likebtn = document.getElementById(like)
+            const likedbtn = document.getElementById(liked)
+            likebtn.classList.toggle('hidden');
+            likedbtn.classList.toggle('hidden');
+
+        }
+
+        function addtocart(cart, carted){
+            // console.log(, ed)
+            const cartbtn = document.getElementById(cart)
+            const cartedbtn = document.getElementById(carted)
+            cartbtn.classList.toggle('hidden');
+            cartedbtn.classList.toggle('hidden');
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
